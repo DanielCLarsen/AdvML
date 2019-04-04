@@ -1,15 +1,15 @@
 import csv
 import sys
 import numpy as np
+import scipy.sparse
 from sklearn.feature_extraction.text import CountVectorizer
 
-def dump(filename):
-    with open(filename, 'w') as f:
-        w = csv.writer(f)
-        w.writerow(json.dumps(self.doc_index))
-        w.writerow(json.dumps(self.words_index))
-        for entry in range(self.m.shape[0]):
-            w.writerow(self.m[entry, :])
+def dump(sparse_matrix,filename):
+    scipy.sparse.save_npz(filename, sparse_matrix)
+
+def load(filename):
+    sparse_matrix = scipy.sparse.load_npz(filename)
+
 
 f = open("wiki_dk_clean_small.csv",'r')
 r = csv.reader(f)
@@ -22,7 +22,6 @@ for row in r:
 
 
 X = vectorizer.fit_transform(data_corpus)
-XM = X.toarray()
-XM = np.transpose(XM)
-print(vectorizer.get_feature_names())
+dump(X,"SparseBOW")
+
 
