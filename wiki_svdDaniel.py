@@ -1,5 +1,5 @@
 from BOW import BOW
-from scipy.linalg import svd
+from scipy.sparse.linalg import svds
 from sklearn.decomposition import PCA
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,9 +28,10 @@ def classify_euclidian_distance(words):
 #print(bow.m.shape)
 
 
-load("SparseBOW.npz")
+bowMat = load("SparseBOW.npz")
 # SVD
-U, s, VT = svd(bow.m)
+bowMat= bowMat.asfptype()
+U, s, VT = svds(bowMat)
 print("size U:",U.shape)
 print("size sigma:",s.shape)
 print("size V.T:",VT.shape)

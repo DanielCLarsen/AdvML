@@ -34,9 +34,9 @@ pages = []
 page = ""
 count = 0
 first = True
-file = open("wiki_dk_clean_small.csv","w")
+file = open("wiki_dk_clean.csv","w", encoding="utf8")
 w = csv.writer(file)
-max_art = 1000
+#max_art = 1000
 for line in open("dawiki-articles.xml",'r',encoding="utf8"):
     if "<page>" in line:
         page = ""
@@ -47,8 +47,8 @@ for line in open("dawiki-articles.xml",'r',encoding="utf8"):
         if title:
             count += 1
             w.writerow([title,text])
-            if count > max_art:
-                break
+            #if count > max_art:
+             #   break
         continue
 
     page += line
