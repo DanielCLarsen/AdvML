@@ -4,7 +4,7 @@ from sklearn.decomposition import PCA
 import numpy as np
 import matplotlib.pyplot as plt
 from odd_one_out_loader import load_odd_one_out
-from wiki_parserDaniel import 
+from wiki_loaderSparseBow import load
 
 def classify_euclidian_distance(words):
     dist = []
@@ -22,13 +22,13 @@ def classify_euclidian_distance(words):
     return np.argmax(dist)
 
 
-bow = BOW("danish")
-bow.load("bow_wiki_clean_small.csv")
+#bow = BOW("danish")
+#bow.load("bow_wiki_clean_small.csv")
 
-print(bow.m.shape)
+#print(bow.m.shape)
 
 
-
+load("SparseBOW.npz")
 # SVD
 U, s, VT = svd(bow.m)
 print("size U:",U.shape)
