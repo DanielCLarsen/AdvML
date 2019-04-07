@@ -8,14 +8,16 @@ import scipy.sparse
 
 
 class BowSparse():
-    def __init__(self,path_to_bow=os.path.join("embeddings","bow"),overwrite=False):
+    def __init__(self,path_to_bow=os.path.join("embeddings","bow"),
+                 wiki_data_path=os.path.join("data","wiki_dk_clean.csv"),
+                 overwrite=False):
         if os.path.isfile(path_to_bow+".npz") and not overwrite:
             print("loading bow from: ",path_to_bow)
             self.bow = self.__load(path_to_bow)
         else:
             print("Bow not found at: ",path_to_bow)
             print("Creating bow first")
-            self.create()
+            self.__create(wiki_data_path=wiki_data_path,output_file_path=path_to_bow)
 
             print("loading bow from: ", path_to_bow)
             self.bow = self.__load(path_to_bow)
@@ -23,7 +25,7 @@ class BowSparse():
     def __call__(self):
         return self.bow
 
-    def create(self,wiki_data_path=os.path.join("data","wiki_dk_clean.csv"),
+    def __create(self,wiki_data_path=os.path.join("data","wiki_dk_clean.csv"),
                  output_file_path = os.path.join("embeddings","bow")):
 
         if not os.path.isfile(wiki_data_path):

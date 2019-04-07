@@ -63,7 +63,7 @@ def __clean_page(xml_page):
         text = re.sub(r'/ref', '', text)
         text = re.sub(r'{[\s\S]*?}', '', text)
         text = re.sub(r'http[\s\S]*? ', '', text)
-        text = re.sub('[^A-Za-zøæå]', ' ', text)
+        text = re.sub('[^A-Za-zøæå0-9]', ' ', text)
         text = re.sub('[\s]+', ' ', text)
         text = text.lower()
 

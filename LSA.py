@@ -3,6 +3,7 @@ from scipy.sparse.linalg import svds
 import numpy as np
 from scipy import spatial
 import nltk.tokenize
+import re
 
 class LSA():
     def __init__(self,bow,number_of_pc=100):
@@ -32,6 +33,7 @@ class LSA():
         return np.argmin(dist)
 
     def __get_feature(self,query):
+        query = re.sub('[^A-Za-zøæå0-9]', ' ', query)
         words = nltk.tokenize.word_tokenize(query)
 
         if len(words) > 1:
