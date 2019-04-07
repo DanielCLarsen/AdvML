@@ -24,6 +24,46 @@ def parse_wiki( wiki_data_path=os.path.join("data","dawiki-articles.xml"),
             __write_vocab(output_file_path,words)
             out_file.close()
 
+def parse_wiki_w2v(
+                wiki_data_path=os.path.join("data","dawiki-articles.xml"),
+                output_file_path = os.path.join("data","wiki_dk_clean_w2v.txt"),
+                max_articles = None,
+                overwrite=False):
+    if not os.path.isfile(wiki_data_path):
+        raise Exception("Path for wiki file is not valid: ", wiki_data_path)
+
+    if os.path.isfile(output_file_path) and not overwrite:
+        print("Output file already exist, skipping parsing wiki")
+        print("output path:", output_file_path)
+    else:
+        out_file = open(output_file_path, "w", encoding="utf8")
+        wiki_file = open(wiki_data_path, 'r', encoding="utf8")
+        __process_data_w2v(wiki_file, out_file, max_articles)
+        out_file.close()
+        wiki_file.close()
+
+def __process_data_w2v(wiki_file,output_file,max_articles):
+
+    page = ""
+    if not max_articles:
+        max_articles = 344000
+
+    pb = progress_bar(max_articles)
+
+    for line in wiki_file:
+        if "<page>" in line:
+            page = ""
+            continue
+        if "</page>" in line:
+            title, text = __clean_page(page)
+            if title:
+                #TODO windows proof this
+                output_file.write(text)
+                if pb():
+                    break
+            continue
+        page += line
+
 def __process_data(wiki_file,writer,max_articles):
     if not max_articles:
         max_articles = 344000

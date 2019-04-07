@@ -29,8 +29,25 @@ cannot recognize any query vectors that contains any symbols. The bow used does 
 * ('I dont know', '1864')
 * ('I dont know', 'halvsyg')
 * ('I dont know', 'slikskål')
+
 acc 0.52
 know 95
 dont_know 5
 
 This version splits and cleans the query vector and numbers are included.
+The feature vector of multiple words are the average of them.
+
+#### Word2Vec on all articles with numbers
+* ('I dont know', 'bæreposer')
+* ('I dont know', 'håndboldekspert')
+* ('I dont know', 'vuggede')
+* ('I dont know', 'halvsyg')
+* ('I dont know', 'sagsakt')
+* ('I dont know', 'slikskål')
+
+acc 0.73
+know 94
+dont_know 6
+
+This version splits and cleans the query vector and numbers are included.
+The feature vector of multiple words are the average of them.

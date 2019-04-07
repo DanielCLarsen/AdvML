@@ -20,7 +20,7 @@ class progress_bar(object):
 
     def __call__(self):
         self.counter+=1
-        if self.prct_update != 0 and self.counter % self.prct_update == 0:
+        if self.prct_update > 0 and self.counter % self.prct_update == 0:
             percent_tag = "{000:.2f}%".format((self.counter / self.max_c) * 100)
             sys.stdout.write("%s]" % (" " * (self.length - self.progress)))
             sys.stdout.write(percent_tag)
@@ -31,7 +31,7 @@ class progress_bar(object):
             else:
                 self.end()
 
-        if self.counter % self.interval == 0:
+        if self.interval > 0 and self.counter % self.interval == 0:
             sys.stdout.write("#")
             self.progress += 1
 
