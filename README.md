@@ -51,3 +51,16 @@ dont_know 6
 
 This version splits and cleans the query vector and numbers are included.
 The feature vector of multiple words are the average of them.
+
+
+#### NMF
+
+* ('I dont know', 'h')
+* ('I dont know', '60')
+* ('I dont know', '1864')
+* ('I dont know', 'halvsyg')
+* ('I dont know', 'slikskål')
+
+acc 0.46
+know 95
+dont_know 5
