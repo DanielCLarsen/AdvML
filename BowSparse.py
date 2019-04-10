@@ -39,7 +39,7 @@ class BowSparse():
             with open(wiki_data_path+"_vocab.json",encoding="utf8") as vocab_file:
                 self.vocab = json.load(vocab_file)
 
-            bow = CountVectorizer(vocabulary=self.vocab)
+            #bow = CountVectorizer(vocabulary=self.vocab)
 
             with open(wiki_data_path, 'r',encoding="utf8") as wiki_file:
                 reader = csv.reader(wiki_file)
@@ -51,6 +51,7 @@ class BowSparse():
                         articles.append(row[0])
                         pb()
 
+            bow = CountVectorizer()
             X = bow.fit_transform(articles)
             self.__dump(X,self.vocab,output_file_path)
 

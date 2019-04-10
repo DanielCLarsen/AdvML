@@ -21,7 +21,7 @@ def parse_wiki( wiki_data_path=os.path.join("data","dawiki-articles.xml"),
             wiki_file = open(wiki_data_path,'r',encoding="utf8")
             writer = csv.writer(out_file)
             words = __process_data(wiki_file,writer,max_articles)
-            __write_vocab(output_file_path,words)
+            #__write_vocab(output_file_path,words)
             out_file.close()
 
 def parse_wiki_w2v(
@@ -82,7 +82,7 @@ def __process_data(wiki_file,writer,max_articles):
                 #TODO windows proof this
                 writer.writerow([text])
 
-                words = words.union(set(nltk.tokenize.word_tokenize(text)))
+                #words = words.union(set(nltk.tokenize.word_tokenize(text)))
                 if pb():
                     break
             continue
