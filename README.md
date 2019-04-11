@@ -81,7 +81,7 @@ Here, the harder/weirder examlpes in the expanded odd-one-out dataset are listed
 ### Special concepts
 | word 1      | word 2     | word 3   | Odd-one-out|  concept  |
 |------|---------|--------|--------|
-|time	|sekund	|minut	|meter|
+|time	|sekund	|minut	|meter| time vs distance |
 |20|	28|	35	|100 |(number difference)|
 |fem	|5	|V	|100 |(number representation)|
 |treds	|ti	|tyve	|200 |(number representation)|
