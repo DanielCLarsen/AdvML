@@ -80,18 +80,18 @@ Here, the harder/weirder examlpes in the expanded odd-one-out dataset are listed
 
 ### Special concepts
 | word 1      | word 2     | word 3   | Odd-one-out|  concept  |
-|------|---------|--------|--------|
+|------|---------|--------|--------|--------|
 |time	|sekund	|minut	|meter| time vs distance |
 |20|	28|	35	|100 |(number difference)|
 |fem	|5	|V	|100 |(number representation)|
 |treds	|ti	|tyve	|200 |(number representation)|
 |pizza	|burger	|hotdog	|salat |(junkfood)|
 |vand	|juice	|mælk	|kaffe |(hot) |
-|giraf	|elefant	|blåhval	|mus |(size)
-|vand	|juice	|kaffe	|øl |(alcohol)
-|hej	|hje	|jeh	|magi |(word misspelling)
-|ukendt	|uformel	|uhyggelig	|glad |(Character difference (u) )
-|solsort	|spurv	|måge	|pingvin |(cant fly)
-|uldsokker	|hjemmesko	|vinterstøvler	|sandaler |(warmth/winter)
+|giraf	|elefant	|blåhval	|mus |(size)|
+|vand	|juice	|kaffe	|øl |(alcohol)|
+|hej	|hje	|jeh	|magi |(word misspelling)|
+|ukendt	|uformel	|uhyggelig	|glad |(Character difference (u) )|
+|solsort	|spurv	|måge	|pingvin |(cant fly)|
+|uldsokker	|hjemmesko	|vinterstøvler	|sandaler |(warmth/winter)|
 
 
