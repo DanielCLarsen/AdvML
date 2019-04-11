@@ -1,5 +1,10 @@
 # ML GOODSTUFF
 
+## TODO
+* test new evalutor
+* add index of word in incorrect answered challanges
+* finish okapi
+
 se lsa test for demo
 
 
@@ -37,6 +42,37 @@ dont_know 5
 This version splits and cleans the query vector and numbers are included.
 The feature vector of multiple words are the average of them.
 
+###### Big dataset
+
+* ('I dont know', 'h')
+* ('I dont know', '60')
+* ('I dont know', '1864')
+* ('I dont know', 'halvsyg')
+* ('I dont know', 'slikskål')
+* ('I dont know', '20')
+* ('I dont know', '5')
+* ('I dont know', 'fyrvækeri')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', '200')
+* ('I dont know', 'viskelædder')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'soduku')
+* ('I dont know', '24')
+* ('I dont know', 'skærstorsdag')
+* ('I dont know', 'trapetz')
+* ('I dont know', '7')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'å')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', 'fransbrød')
+* ('I dont know', 'badevinger')
+
+acc 0.40100250626566414
+know 375
+dont_know 24
+
 #### Word2Vec on all articles with numbers
 * ('I dont know', 'bæreposer')
 * ('I dont know', 'håndboldekspert')
@@ -52,6 +88,46 @@ dont_know 6
 This version splits and cleans the query vector and numbers are included.
 The feature vector of multiple words are the average of them.
 
+##### big dataset
+
+* ('I dont know', 'bæreposer')
+* ('I dont know', 'håndboldekspert')
+* ('I dont know', 'vuggede')
+* ('I dont know', 'halvsyg')
+* ('I dont know', 'sagsakt')
+* ('I dont know', 'slikskål')
+* ('I dont know', 'penalhus')
+* ('I dont know', 'landingstel')
+* ('I dont know', 'fyrvækeri')
+* ('I dont know', 'ørepropper')
+* ('I dont know', 'køkkenrulle')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', 'treds')
+* ('I dont know', 'viskelædder')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'pjatte')
+* ('I dont know', 'badeforhæng')
+* ('I dont know', 'regnjakke')
+* ('I dont know', 'hje')
+* ('I dont know', 'soduku')
+* ('I dont know', 'køkkenrulle')
+* ('I dont know', 'uldsokker')
+* ('I dont know', 'skærstorsdag')
+* ('I dont know', 'trapetz')
+* ('I dont know', 'børnhave')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'skruemaskine')
+* ('I dont know', 'køkkenrulle')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', 'fransbrød')
+* ('I dont know', 'badevinger')
+* ('I dont know', 'tømre')
+
+acc 0.6240601503759399
+know 365
+dont_know 34
 
 #### NMF
 
@@ -64,6 +140,37 @@ The feature vector of multiple words are the average of them.
 acc 0.46
 know 95
 dont_know 5
+
+###### big dataset
+* ('I dont know', 'h')
+* ('I dont know', '60')
+* ('I dont know', '1864')
+* ('I dont know', 'halvsyg')
+* ('I dont know', 'slikskål')
+* ('I dont know', '20')
+* ('I dont know', '5')
+* ('I dont know', 'fyrvækeri')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', '200')
+* ('I dont know', 'viskelædder')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'soduku')
+* ('I dont know', '24')
+* ('I dont know', 'skærstorsdag')
+* ('I dont know', 'trapetz')
+* ('I dont know', '7')
+* ('I dont know', 'tv2play')
+* ('I dont know', 'å')
+* ('I dont know', 'mascare')
+* ('I dont know', 'halsterklæde')
+* ('I dont know', 'fransbrød')
+* ('I dont know', 'badevinger')
+
+acc 0.42606516290726815
+know 375
+dont_know 24
+
 
 
 ## Odd-one-out highlights

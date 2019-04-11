@@ -1,7 +1,7 @@
 from BowSparse import BowSparse
 from wiki_parser import parse_wiki
 from evaluator import evaluate
-from LSA import LSA
+from OkapiBM25 import OkapiBM25
 
 parse_wiki(max_articles=None,overwrite=False,output_file_path="data/wiki_dk_clean.csv")
 
@@ -9,8 +9,8 @@ bow = BowSparse(overwrite=False,wiki_data_path="data/wiki_dk_clean.csv",
                 path_to_bow="embeddings/bow")
 
 
-lsa = LSA(bow,number_of_pc=100)
+okapi = OkapiBM25(bow)
 
-evaluate(lsa)
+evaluate(okapi)
 
 
