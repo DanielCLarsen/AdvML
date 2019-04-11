@@ -1,10 +1,9 @@
 import csv
-import os
 
 
 
-def load_odd_one_out():
-    f = open(os.path.join("data","four_words_2.csv"),'r')
+def load_odd_one_out(dataset):
+    f = open(dataset,'r')
     r = csv.reader(f)
     challenge = []
     for row in r:
