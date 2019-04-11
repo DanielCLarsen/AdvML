@@ -3,7 +3,6 @@ import csv
 from progress_bar import progress_bar
 import os
 import json
-import nltk.tokenize
 
 def parse_wiki( wiki_data_path=os.path.join("data","dawiki-articles.xml"),
                 output_file_path = os.path.join("data","wiki_dk_clean.csv"),
@@ -20,8 +19,7 @@ def parse_wiki( wiki_data_path=os.path.join("data","dawiki-articles.xml"),
             out_file = open(output_file_path,"w",encoding="utf8")
             wiki_file = open(wiki_data_path,'r',encoding="utf8")
             writer = csv.writer(out_file)
-            words = __process_data(wiki_file,writer,max_articles)
-            #__write_vocab(output_file_path,words)
+            __process_data(wiki_file,writer,max_articles)
             out_file.close()
 
 def parse_wiki_w2v(
@@ -68,7 +66,6 @@ def __process_data(wiki_file,writer,max_articles):
     if not max_articles:
         max_articles = 344000
 
-    words = set()
     pb = progress_bar(max_articles,title="processing wikipedia")
     writer.writerow([max_articles])
     page=""
@@ -82,13 +79,10 @@ def __process_data(wiki_file,writer,max_articles):
                 #TODO windows proof this
                 writer.writerow([text])
 
-                #words = words.union(set(nltk.tokenize.word_tokenize(text)))
                 if pb():
                     break
             continue
         page += line
-    return words
-
 def __clean_page(xml_page):
 
     try:

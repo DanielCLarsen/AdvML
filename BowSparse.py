@@ -35,11 +35,8 @@ class BowSparse():
             print("Output file already exist, skipping creating bow")
             print("output path:", output_file_path)
         else:
+            #TODO windows proof this
             csv.field_size_limit(sys.maxsize)
-            with open(wiki_data_path+"_vocab.json",encoding="utf8") as vocab_file:
-                self.vocab = json.load(vocab_file)
-
-            #bow = CountVectorizer(vocabulary=self.vocab)
 
             with open(wiki_data_path, 'r',encoding="utf8") as wiki_file:
                 reader = csv.reader(wiki_file)
@@ -53,6 +50,8 @@ class BowSparse():
 
             bow = CountVectorizer()
             X = bow.fit_transform(articles)
+
+            self.vocab = self.__create_vocab(bow.get_feature_names())
             self.__dump(X,self.vocab,output_file_path)
 
 
@@ -65,3 +64,11 @@ class BowSparse():
         with open(filename+"_vocab.json",'r') as f:
             self.vocab = json.load(f)
         return scipy.sparse.load_npz(filename+".npz")
+
+    def __create_vocab(self,list_of_names):
+        c = 0
+        vocab = {}
+        for word in list_of_names:
+            vocab.update({word:c})
+            c+=1
+        return vocab
