@@ -1,8 +1,8 @@
 from odd_one_out_loader import load_odd_one_out
+import os
 
-
-def evaluate(model):
-    odd_one_out = load_odd_one_out()
+def evaluate(model,dataset=os.path.join("data","odd_one_out_djt.csv")):
+    odd_one_out = load_odd_one_out(dataset)
 
     correct = 0
     know = 0
