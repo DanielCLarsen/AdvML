@@ -1,104 +1,4 @@
-word1,word2,word3,word4
-æble,pære,kirsebær,stol
-stol,bord,reol,græs
-græs,træ,blomst,bil
-bil,cykel,tog,vind
-vind,regn,solskin,mandag
-mandag,tirsdag,søndag,tømrer
-tømrer,vvs-mand,snedker,barn
-barn,far,mormor,lampe
-lampe,stearinlys,lommelygte,jern
-jern,guld,magnesium,sjov
-sjov,dårlig,vanvittig,papir
-papir,ringbind,blyant,vagt
-vagt,politimand,fængselsbetjent,by
-by,landsby,købstad,småkage
-småkage,citronmåne,kringle,dør
-dør,væg,vindue,klaver
-klaver,trompet,blokfløjte,fandens
-fandens,fuck,sgu,vand
-vand,jord,ild,hukommelse
-hukommelse,intelligens,emotion,Niels Bohr
-Niels Bohr,H.C. Ørsted,Ole Rømer,Lars Løkke Rasmussen
-Lars Løkke Rasmussen,Poul Nyrup Rasmussen,Anders Fogh Rasmussen,Peter Schmeichel
-Peter Schmeichel,Kasper Schmeichel,Brian Laudrup,Caroline Wozniacki
-Caroline Wozniacki,Steffi Graf,Serena Williams,Monaco
-Monaco,Paris,Milano,Pia
-Pia,Lone,Marianne,Ole
-bold,fjerbold,puck,mave
-mave,bryst,ryg,hat
-hat,kasket,hue,ishockey
-ishockey,skiløb,skihop,fodbold
-gå,løbe,kravle,sidde
-rød,blå,violet,himmel
-Finland,Sverige,Norge,Kina
-Kina,Japan,Sydkorea,Irland
-humor,komedie,comedy,beskidt
-vaskemaskine,strygejern,tørretumbler,beskidt
-restaurant,café,bar,øl
-øl,vin,spiritus,køkken
-køkken,baderum,stue,øl
-wing,back,forward,vinge
-vinge,landingsstel,propel,kartoffel
-kartoffel,frikadelle,salat,pejs
-Viborg,Randers,Hobro,Kattegat
-Kattegat,Øresund,Alssund,Sjælland
-eg,lærketræ,æbletræ,slange
-hugorm,pyton,snog,hund
-ko,so,hest,krappe
-ugle,krage,måge,hund
-hund,ræv,ulv,krappe
-spilletid,halvleg,dommer,ræv
-tv,radio,telefon,klud
-ondt,forfærdeligt,skrækkeligt,herligt
-hoppende,dansende,løbende,døende
-saver,hamrer,skruer,aer
-går,spadserer,vandrer,siger
-gange,dividere,lægge sammen,vandrer
-mener,tror,ved,går
-fire,fem,sytten,aldrig
-Nielsen,Jensen,Olsen,kassen
-mega,kæmpe,enorm,smule
-kufferter,tasker,bæreposer,styrelser
-landstræner,håndboldekspert,mål,rum
-trup,gruppe,hold,sti
-grafik,figur,plot,lån
-januar,maj,juni,ur
-angiveligt,muligvis,sandsynligvis,nutidigt
-oplysninger,data,informationer,fjerner
-fire minutter,tre timer,en uge,to piger
-instrumentbrættet,motorer,cockpit,sagen
-anmeldelse,politi,forbrydelse,kaffe
-instrueret,organiseret,ledet,skuffet
-billede,foto,tegning,skål
-kapitel,paragraf,sektion,park
-virksomhed,firma,selskab,sovs
-tres,60,LX,3
-1864,1807,1940,1909
-diplom,udmærkelse,pris,øremærke
-bange,urolig,nervøs,ordentlig
-norsk,engelsk,spansk,falsk
-mus,tastatur,skærm,bræt
-dør,kradser af,udånder,åbner
-og,samt,endvidere,sin
-hans,sit,vores,vises
-stod og råbte,lå og sov,sad og så,mand og kvinde
-frokost,morgenmad,brunch,måne
-mænd,personer,individer,gange
-kidnappe,røve,stjæle,køre
-råbte,skreg,larmede,vuggede
-kontorist,embedsmand,bureaukrat,spisebord
-vegetation,krat,bed,skur
-cyklist,bilist,chauffør,ekspedient
-bibliotek,bog,låner,flag
-halvsyg,forkølelse,hoster,vej
-musik,node,rytme,leder
-rapport,sagsakt,artikel,spand
-tekande,vinflaske,slikskål,racerbil
-forhører,spørger,anmoder,banker
-fremtidige,fortidige,nutidige,havdige
-kanal,flod,bæk,spejl
-kanal,program,udsendelse,vask
+Word1,Word2,Word3,OddWord
 grøntsag,frugt,salat,tærte
 politi,skyderi,dræbt,tyngdekraft
 20,28,35,100
@@ -108,7 +8,7 @@ gå,løbe,kravle,køre
 vind,blæst,luft,angreb
 skæg,hår,barber,baby
 snedker,tømrer,maler,programmør
-barn,mor,far,president
+barn,mor,far,præsident
 bluse,bukser,sko,øjenbryn
 papir,blyant,penalhus,tæppe
 ringbind,blyant,papir,raket
@@ -120,18 +20,18 @@ klog,intelligent,smart,dum
 time,sekund,minut,meter
 fem,5,V,100
 blå,rød,gul,tis
-sverige,island,australien,flaske
-beskidt,strygejern,plet,pluto
+Sverige,Island,Australien,flaske
+beskidt,strygejern,plet,Pluto
 restaurant,butik,frisør,bog
 vodka,whisky,tequila,barber
 stue,køkken,badeværelse,fodgængerfelt
-propel,vinge,landingstel,bil
+propel,vinge,landing stel,bil
 pejs,jul,julemand,frikadelle
 kat,hund,hamster,græs
 himmel,blå,skyer,løg
 lyn,torden,regn,elektricitet
-lars,bob,rikke,hest
-fyrvækeri,farver,eksplosion,spilletid
+Lars,bob,Rikke,hest
+fyrværkeri,farver,eksplosion,spilletid
 radio,musik,radiobølger,taske
 dyne,pude,seng,gulv
 burger,pizza,durum,højhus
@@ -140,20 +40,20 @@ glad,sur,trist,rækkehus
 risiko,chance,trussel,baggrund
 pizza,burger,sushi,undergrund
 slik,kage,chips,ørepropper
-ipad,iphone,ipod,slik
+iPad,iPhone,iPod,slik
 nær,tæt på,klos,væk
 avis,blad,magasin,øjenvippe
 kærlighed,omsorg,sød,ond
-mette,pia,dorte,henning
-peter,preben,torben,maria
+Mette,Pia,Dorte,Henning
+Peter,Preben,Torben,Maria
 serviet,køkkenrulle,toiletpapir,kat
 guld,sølv,bronze,mudder
 cykel,hjelm,pedaler,asfalt
 benzin,diesel,olie,smør
 skærm,mus,tastatur,karton
-mascare,øjenskygge,puder,mus
+mascara,øjenskygge,puder,mus
 bukser,skjorte,jakke,fødder
-handsker,hue,halsterklæde,næse
+handsker,hue,halstørklæde,næse
 vand,glas,kande,giraf
 rør,radiator,termostat,flaske
 gin,tonic,lime,æble
@@ -161,10 +61,10 @@ rose,tulipan,magnolie,picnic
 budget,lån,penge,Yacht
 lykke,glæde,glad,løg
 påske,jul,ferie,arbejde
-ikea,jysk,ilva,parkering
+IKEA,jysk,Ilva,parkering
 pige,dreng,køn,sko
 kuffert,taske,pose,orm
-treds,ti,tyve,200
+tres,ti,tyve,200
 nøgle,adgang,lås,pude
 film,skuespiller,plot,slot
 hat,hoved,tøj,bord
@@ -184,13 +84,13 @@ sang,dans,musik,æg
 armbånd,halskæde,ørering,overskæg
 sagde,fortalte,udtrykte,tempel
 adjektiver,adverbier,substantiver,apotek
-terninger,spil,brætspil,viskelædder
+terninger,spil,brætspil,viskelæder
 karamel,bolsje,chokolade,tivoli
-facebook,twitter,youtube,gab
+Facebook,Twitter,YouTube,gab
 blæser,udluftning,luftkvalitet,gnaver
 støv,rengøring,allergi,knap
-kia,opel,ford,gardin
-cheesecake,dessert,ost,klokken
+Kia,Opel,Ford,gardin
+drømmekage,dessert,ost,klokken
 stol,bord,møbel,magi
 netflix,viaplay,tv2play,undervisning
 anders and,fedtmule,pluto,manga
@@ -205,8 +105,8 @@ rose,lilje,tulipan,kaktus
 sko,trøje,bukser,paraply
 Kim Larsen,Thomas Helmig,Rasmus seebach,Michael Jackson
 tiger,løve,leopard,giraf
-øl,whiskey,gin,vand
-fodbold,håndbold,basketbold,fjerbold
+øl,whisky,gin,vand
+fodbold,håndbold,basket bold,fjerbold
 vand,juice,mælk,kaffe
 maleri,skulptur,udstilling,sport
 guitar,klaver,tromme,musik
@@ -234,7 +134,7 @@ jordskælv,oversvømmelse,orkan,sol
 ski,skøjter,snowboard,svømning
 Danmark,Tyskland,Frankrig,Europa
 kage,slik,is,bønne
-ninja,samurai,ridder,ekspedient
+Ninja,samurai,ridder,ekspedient
 tyk,fed,overvægtig,tynd
 ok,okay,forstået,nej
 briller,teleskop,kikkert,falk
@@ -244,7 +144,7 @@ blomst,blad,stilk,sværd
 regnjakke,paraply,regnslag,solcreme
 giraf,elefant,blåhval,mus
 vand,juice,kaffe,øl
-fodbold,håndbold,basketbold,svømning
+fodbold,håndbold,basket bold,svømning
 svømning,roning,surfing,cykling
 mand,kvinde,barn,hund
 karry,paprika,peber,morgenmad
@@ -311,7 +211,7 @@ panda,løve,elefant,fugl
 Danmark,Norge,Sverige,Kina
 lufthavn,Banegård,Busstation,Kælder
 Kælder,Stue,Køkken,Kirsebær
-Juleaften,nytårsaften,skærstorsdag,Grundlovsdag
+Juleaften,nytårsaften,skærtorsdag,Grundlovsdag
 Hånd,arm,ben,kat
 Jern,stål,metal,skrue
 Bøg,eg,Elg,have
@@ -328,11 +228,11 @@ bil,cykel,løbehjul,bade
 sol,sandkorn,badetøj,grøn
 bukser,trøje,hue,kælk
 Blyant,tusch,viskelæder,båd
-sejl,trapetz,skøde,bjerg
+sejl,trapez,skøde,bjerg
 butterfly,crawl,bryst,løbe
 synge,kor,solosang,bål
 Salsa,Latin,Mambo,gang
-Skole,børnhave,gymnasium,hjælpe
+Skole,børnehave,gymnasium,hjælpe
 7,10,12,5
 Rom,Berlin,Budapest,Hamborg
 Word,excel,Visio,avis
@@ -347,7 +247,7 @@ kort,GPS,vejviser,skilt
 hammer,skruemaskine,svensknøgle,grydeske
 han,hun,man,hule
 fortid,nutid,fremtid,hjælpe
-LP,CD,kasettebånd,tv
+LP,CD,kassettebånd,tv
 Volvo,Audi,BMW,Garmin
 glad,sur,trist,sagde
 risiko,chance,trussel,yde
@@ -364,9 +264,9 @@ guld,sølv,bronze,lys
 cykel,hjelm,pedaler,kasket
 benzin,diesel,olie,is
 skærm,mus,tastatur,sandal
-mascare,øjenskygge,puder,kæde
+mascara,øjenskygge,puder,kæde
 bukser,skjorte,jakke,løbe
-handsker,hue,halsterklæde,Barn
+handsker,hue,halstørklæde,Barn
 vand,glas,kande,Købe
 rør,radiator,termostat,Bord
 gin,tonic,lime,Frugt
@@ -387,7 +287,7 @@ strikke,hækle,sy,feje
 feje,skovle,rive,råbe
 råbe,skrige,sige,glide
 flot,lækker,smuk,blød
-bolle,flute,fransbrød,sko
+bolle,flute,franskbrød,sko
 sandal,stilet,støvle,jakke
 halskæde,armbånd,ur,badevinger
 gås,and,due,bjørn
