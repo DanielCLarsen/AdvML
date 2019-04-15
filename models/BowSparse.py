@@ -2,7 +2,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import sys
 import json
 import csv
-from progress_bar import progress_bar
+from utils.progress_bar import progress_bar
 import os
 import scipy.sparse
 

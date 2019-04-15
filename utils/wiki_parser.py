@@ -1,6 +1,6 @@
 import re
 import csv
-from progress_bar import progress_bar
+from utils.progress_bar import progress_bar
 import os
 import json
 
