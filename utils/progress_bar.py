@@ -9,7 +9,7 @@ class progress_bar(object):
         self.length = length
         self.counter = 0
         self.interval = int(max_c / length)
-        self.prct_update = int(self.interval/5)
+        self.prct_update = int(self.interval/10)
         self.progress = 0
         self.title = title
         self.start_time = time.time()

@@ -1,6 +1,5 @@
 import numpy as np
 import sklearn.decomposition.nmf
-from model import Model
 from scipy import spatial
 import nltk.tokenize
 import re

@@ -9,7 +9,7 @@ import re
 class LSA:
     def __init__(self, bow, number_of_pc=100):
         # SVD
-        U, s, VT = svds(csr_matrix(bow(), dtype=float), k=number_of_pc)
+        U, s, VT = svds(csr_matrix(bow(), dtype=float), k=number_of_pc,which="LM",return_singular_vectors="vh")
         self.vocab = bow.vocab
         self.sigma_k = np.diag(s[:number_of_pc])
         self.U_k = VT[ :number_of_pc,:]
@@ -29,17 +29,11 @@ class LSA:
 
             feature.append(self.U_k[:, word_index].dot(self.sigma_k))
 
-
-        if not feature:
-            raise Exception("empty feature")
         return np.average(feature, axis=0)
 
     def distance(self,word1,word2):
-        print(word1,word2)
         v1 = self.__get_feature(word1)
         v2 = self.__get_feature(word2)
-        print(type(v1))
-        print(type(v2))
         return spatial.distance.cosine(v1, v2)
 
     def know(self, query):

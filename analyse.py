@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 data = []
 total = 0
 
-file_name = "results/word2vec_2019-04-15 17:26:28.583775.csv"
-file_unknown = "results/word2vec_2019-04-15 17:26:28.583775_unknown.csv"
+file_name = "results/OKAPI_2019-04-16 09:03:02.280620.csv"
+file_unknown = "results/OKAPI_2019-04-16 09:03:02.280620_unknown.csv"
 
 f = open(file_name,'r',encoding="utf8")
 fu = open(file_unknown,'r',encoding="utf8")
@@ -27,7 +27,7 @@ for row in w:
             data.append(d)
 
 
-
+predict = 0
 inlier_dist = []
 outlier_dist = []
 for d in data:
@@ -36,6 +36,11 @@ for d in data:
 
     for i in range(5,8):
         outlier_dist.append(d[i])
+
+    if d[1] == 3:
+        predict+=1
+
+print(predict/len(data))
 
 plt.hist(inlier_dist,bins=50)
 plt.hist(outlier_dist,bins=50)

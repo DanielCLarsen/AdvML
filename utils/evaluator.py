@@ -1,4 +1,5 @@
 from utils.odd_one_out_loader import load_odd_one_out
+from utils.progress_bar import progress_bar
 import os
 import datetime
 import csv
@@ -22,7 +23,7 @@ class Evaluator:
 
 
     def __eval(self,model,odd_one_out):
-
+        pb = progress_bar(len(odd_one_out))
         for i,row in enumerate(odd_one_out):
             if self.__know_words(row,model):
 
@@ -37,6 +38,8 @@ class Evaluator:
 
             else:
                 self.writer.writerow([i,"dont_know"])
+
+            pb()
 
 
     def __know_words(self,row,model):
@@ -56,7 +59,6 @@ class Evaluator:
 
         for x in range(0,3):
             distances.append(model.distance(words[x],words[3]))
-
         return distances
 
     def __predict(self, distances):

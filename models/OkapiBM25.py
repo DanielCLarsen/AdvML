@@ -1,62 +1,82 @@
 import numpy as np
 from scipy import spatial
-class OkapiBM25():
+import nltk.tokenize
+import re
+
+class OkapiBM25:
     def __init__(self,bow):
         self.bow = bow
         self.vocab=bow.vocab
+        self.name="OKAPI"
 
-    def predict(self, words):
-        dist = []
-        for i in range(len(words)):
-            total_dist = 0
-            v1 = self.__get_feature(words[i])
-            for c in range(len(words)):
-                if i != c:
-                    v2 = self.__get_feature(words[c])
-                    d = 1 - spatial.distance.cosine(v1, v2)
+    def __get_feature(self,query):
+        words = self.__split(query)
+        feature = []
 
-                    # print("dist:",d)
-                    total_dist += d
+        for word in words:
+            if not self.vocab.get(word):
+                raise Exception("I dont know", word)
+            feature.append(self.___get_score(word))
 
-            dist.append(total_dist)
-
-        # print(dist)
-        return np.argmin(dist)
-
-    def __get_feature(self,words):
-        if type(words) == list:
-            sum=None
-            for word in words:
-                if sum:
-                    sum += self.___get_score(word)
-                else:
-                    sum = self.___get_score(word)
-        else:
-            return self.___get_score(words)
+        return np.sum(feature, axis=0)
 
 
     def ___get_score(self,word):
         i = self.vocab.get(word)
         N = self.bow().shape[0]
+        #print(self.bow().shape)
         non_zero = self.bow()[:, i].count_nonzero()
         IDF = np.log((N - non_zero + 0.5) / non_zero + 0.5)
         freq_doc = self.bow()[:, i]
-        doc_leng = self.bow().sum(axis=0)
+        doc_leng = self.bow().sum(axis=1)
         avg_doc = doc_leng.sum() / N
 
-        print(type(avg_doc))
-        print(doc_leng.shape)
+        #print(type(avg_doc))
+        #print("doc_leng",doc_leng.shape)
+        #print("freq_doc",freq_doc.shape)
 
 
         #k1 = [1.2, 2]
         k1 = 1.2
         b = 0.75
 
-        tes = freq_doc+k1
-        print(tes.shape)
-
         upper = (freq_doc*(k1+1))
-        lower = (freq_doc+k1*(1-b+b*(doc_leng/avg_doc)))
-        score = IDF* (upper/lower)
-        print(score.shape)
+        c = k1*(1-b+b*(doc_leng/avg_doc))
+        #print(c.shape)
+
+        #print(non_zero)
+        nn = freq_doc.nonzero()
+        for i in range(non_zero):
+            doc_i =nn[0][i]
+            term_i = nn[1][i]
+            freq_doc[doc_i,0]+=k1*(1-b+b*(doc_leng[doc_i,0]/avg_doc))
+            upper[doc_i,0] /= freq_doc[doc_i,0]
+
+        score = IDF * upper
+        #print(score.shape)
+        #print(score)
         return score
+
+    def distance(self,word1,word2):
+
+        v1 = self.__get_feature(word1)
+        v2 = self.__get_feature(word2)
+
+        return spatial.distance.cosine(v1.todense(), v2.todense())
+
+    def know(self, query):
+        words = self.__split(query)
+
+        for word in words:
+
+            if not self.vocab.get(word):
+                return False
+
+        return True
+
+    def __split(self, word):
+        query = re.sub('[^A-Za-zøæå0-9]', ' ', word)
+        words = nltk.tokenize.word_tokenize(query)
+        words = [x.lower() for x in words]
+
+        return words

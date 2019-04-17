@@ -48,8 +48,9 @@ class BowSparse():
                         articles.append(row[0])
                         pb()
 
-            bow = CountVectorizer()
+            bow = CountVectorizer(token_pattern=r'\b[\S0-9]+\b')
             X = bow.fit_transform(articles)
+            print(bow.get_feature_names()[:100])
 
             self.vocab = self.__create_vocab(bow.get_feature_names())
             self.__dump(X,self.vocab,output_file_path)
@@ -57,11 +58,11 @@ class BowSparse():
 
     def __dump(self,sparse_matrix,vocab,filename):
         scipy.sparse.save_npz(filename, sparse_matrix)
-        with open(filename+"_vocab.json",'w') as f:
+        with open(filename+"_vocab.json",'w',encoding="utf8") as f:
             json.dump(vocab,f)
 
     def __load(self,filename):
-        with open(filename+"_vocab.json",'r') as f:
+        with open(filename+"_vocab.json",'r',encoding="utf8") as f:
             self.vocab = json.load(f)
         return scipy.sparse.load_npz(filename+".npz")
 
