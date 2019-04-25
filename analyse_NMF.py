@@ -1,6 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 from Analyzer import Analyzer
+import numpy as np
 
 data = []
 total = 0
@@ -10,12 +11,16 @@ file_unknown = "results/NMF_2019-04-16 15:06:19.412936_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown)
 
-print(ana.get_acc())
+ana.get_outliers(10)
+print("\n")
+ana.get_outliers_below(0.4)
+
+print("acc:",ana.get_acc(),"err:",ana.get_acc_error())
 
 name = "NMF"
 
 plt.title("NMF Normalized")
-plt.xlabel("Distance")
+plt.xlabel("Distance ratio")
 plt.ylabel("Count")
 plt.hist(ana.get_norm_dist(),bins=50,color='blue',label='Normalized distances')
 plt.legend(loc='upper right')
@@ -23,6 +28,14 @@ plt.savefig("images/"+name+"_normalized")
 plt.show()
 
 
+plt.title("NMF Normalized")
+plt.xlabel("Distance ratio")
+plt.ylabel("Count")
+plt.xlim(0,5)
+plt.hist(ana.get_norm_dist(),bins=500,color='blue',label='Normalized distances')
+plt.legend(loc='upper right')
+plt.savefig("images/"+name+"_normalized_fitted")
+plt.show()
 
 
 plt.title("NMF")

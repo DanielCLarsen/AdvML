@@ -10,14 +10,16 @@ file_unknown = "results/OKAPI_2019-04-16 09:03:02.280620_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown)
 
-print(ana.get_acc())
-print(ana.get_inlier_dist())
-print(ana.get_outlier_dist())
+ana.get_outliers(1.5)
+print("\n")
+ana.get_outliers_below(0.9)
+
+print("acc:",ana.get_acc(),"err:",ana.get_acc_error())
 
 name = "OkapiBM25"
 
 plt.title("Okapi BM25 Normalized")
-plt.xlabel("Distance")
+plt.xlabel("Distance ratio")
 plt.ylabel("Count")
 plt.hist(ana.get_norm_dist(),bins=50,color='blue',label='Normalized distances')
 plt.legend(loc='upper right')

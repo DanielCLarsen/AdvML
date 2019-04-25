@@ -1,6 +1,7 @@
 import csv
 from utils.odd_one_out_loader import load_odd_one_out
 import os
+import numpy as np
 
 class Analyzer(object):
     def __init__(self,file_path,file_unknown_path):
@@ -61,3 +62,24 @@ class Analyzer(object):
             norm_dist.append(outlier_dist/inlier_dist)
 
         return norm_dist
+
+    def get_acc_error(self):
+        acc = self.get_acc()
+        err = np.sqrt( acc * (1 - acc) / self.total)
+        return err
+
+    def get_outliers(self,above):
+        d = self.get_norm_dist()
+        while np.max(d) > above:
+
+
+            print("distance ratio",np.max(d),self.ooo[np.argmax(d)])
+
+            d[np.argmax(d)] = 0
+
+    def get_outliers_below(self, below):
+        d = self.get_norm_dist()
+        while np.min(d) < below:
+            print("distance ratio", np.min(d), self.ooo[np.argmin(d)])
+
+            d[np.argmin(d)] = 100
