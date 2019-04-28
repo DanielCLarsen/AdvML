@@ -67,8 +67,11 @@ class Evaluator:
         two = distances[0] + distances[2] + distances[4]
         three = distances[1] + distances[2] + distances[5]
         four = distances[3] + distances[4] + distances[5]
-
-        return np.argmax([one,two,three,four])
+        dist = [one,two,three,four]
+        maxes = np.argwhere(dist == np.max(dist))
+        if len(maxes.flatten())>1:
+            print(maxes.flatten())
+        return np.random.choice(maxes.flatten(), 1)
 
     def __generate_name(self, model):
         current_time = datetime.datetime.utcnow()

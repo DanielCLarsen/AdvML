@@ -5,19 +5,19 @@ from Analyzer import Analyzer
 data = []
 total = 0
 
-file_name = "results/OKAPI_2019-04-16 09:03:02.280620.csv"
-file_unknown = "results/OKAPI_2019-04-16 09:03:02.280620_unknown.csv"
+file_name = "results/OKAPI_2019-04-28 16:02:33.394341.csv"
+file_unknown = "results/OKAPI_2019-04-28 16:02:33.394341_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown)
 
 ana.get_outliers(1.5)
 print("\n")
-ana.get_outliers_below(0.9)
+ana.get_outliers_below(1.01)
 
 print("acc:",ana.get_acc(),"err:",ana.get_acc_error())
 
 name = "OkapiBM25"
-
+plt.rcParams.update({'font.size': 22,'figure.figsize': [10,10]})
 plt.title("Okapi BM25 Normalized")
 plt.xlabel("Distance ratio")
 plt.ylabel("Count")
