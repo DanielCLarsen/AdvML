@@ -6,8 +6,8 @@ import numpy as np
 data = []
 total = 0
 
-file_name = "results/NMF_2019-04-28 14:54:07.830876.csv"
-file_unknown = "results/NMF_2019-04-28 14:54:07.830876_unknown.csv"
+file_name = "results/NMF_2019-04-29 17:55:18.441480.csv"
+file_unknown = "results/NMF_2019-04-29 17:55:18.441480_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown,small=True)
 

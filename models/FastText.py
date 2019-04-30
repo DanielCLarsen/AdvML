@@ -4,34 +4,17 @@ import numpy as np
 from scipy import spatial
 import nltk.tokenize
 import re
-from gensim.models import Word2Vec as w
-
-class Word2Vec:
+import fasttext
+class FastText:
     def __init__(self,
                  wiki_file_path = os.path.join("data","wiki_dk_clean_w2v.txt"),
-                 w2v_binaries_path= os.path.join("embeddings","wiki_w2v.bin"),
-                 overwrite=False,pretrained=False):
+                 ft_binaries_path= os.path.join("embeddings","wiki_w2v.bin")):
 
-        self.name = "word2vec"
-        if pretrained:
-            print("using gensim")
-            self.w2v = w.load(w2v_binaries_path)
-        else:
-
-            if os.path.isfile(w2v_binaries_path) and not overwrite:
-                print("loading w2v from: ",w2v_binaries_path)
-                self.w2v = word2vec.load(w2v_binaries_path)
-            else:
-                print("w2v not found at: ",w2v_binaries_path)
-                print("Creating w2v first")
-
-                word2vec.word2vec(wiki_file_path, w2v_binaries_path, size=100, verbose=True)
-
-                print("loading w2v from: ", w2v_binaries_path)
-                self.w2v = word2vec.load(w2v_binaries_path)
+        self.name = "FastText"
+        self.ft = fasttext.load_model(ft_binaries_path)
 
     def __call__(self, word):
-        return self.w2v[word]
+        return self.ft[word]
 
     def __get_feature(self,query):
 
@@ -40,7 +23,7 @@ class Word2Vec:
 
         for word in words:
             try:
-                vec = self.w2v[word]
+                vec = self.ft[word]
             except:
                 raise Exception("I dont know", word)
 
@@ -53,7 +36,7 @@ class Word2Vec:
 
         for word in words:
             try:
-                self.w2v[word]
+                self.ft[word]
             except:
                 return False
         return True

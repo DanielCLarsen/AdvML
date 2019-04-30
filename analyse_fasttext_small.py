@@ -5,8 +5,8 @@ import numpy as np
 data = []
 total = 0
 
-file_name = "results/word2vec_2019-04-29 14:41:10.729714.csv"
-file_unknown = "results/word2vec_2019-04-29 14:41:10.729714_unknown.csv"
+file_name = "results/FastText.csv"
+file_unknown = "results/FastText_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown,small=True)
 
@@ -16,9 +16,9 @@ ana.get_outliers_below(0.4)
 
 print("acc:",ana.get_acc(),"err:",ana.get_acc_error())
 
-name = "Word2Vec"
+name = "FastText"
 plt.rcParams.update({'font.size': 22,'figure.figsize': [10,10]})
-plt.title("Word2Vec Normalized small")
+plt.title("FastText Normalized small")
 plt.xlabel("Distance ratio")
 plt.ylabel("Count")
 plt.hist(ana.get_norm_dist(),bins=50,color='blue',label='Normalized distances')
@@ -27,18 +27,18 @@ plt.savefig("images/"+name+"_normalized_small")
 plt.show()
 
 
-plt.title("Word2Vec Normalized small")
+plt.title("FastText Normalized small")
 plt.xlabel("Distance ratio")
 plt.ylabel("Count")
 plt.xlim(0,5)
-plt.hist(ana.get_norm_dist(),bins=500,color='blue',label='Normalized distances')
+plt.hist(ana.get_norm_dist(),bins=50,color='blue',label='Normalized distances')
 plt.legend(loc='upper right')
 plt.savefig("images/"+name+"_normalized_fitted_small")
 plt.show()
 
 
 
-plt.title("Word2Vec small")
+plt.title("FastText small")
 plt.xlabel("Distance")
 plt.ylabel("Count")
 plt.xlim(0,1)

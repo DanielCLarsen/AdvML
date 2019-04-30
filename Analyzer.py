@@ -12,7 +12,7 @@ class Analyzer(object):
 
         if self.small:
             self.ooo = self.ooo[:100]
-            print(self.total)
+        print(self.total)
     def __read_data(self,file_path,file_unknown_path):
         f = open(file_path, 'r', encoding="utf8")
         fu = open(file_unknown_path, 'r', encoding="utf8")
@@ -22,9 +22,11 @@ class Analyzer(object):
         self.predictions = []
         self.distances = []
         self.indices = []
+        self.data = []
         for row in w:
            self.total += 1
            if row:
+               self.data.append(row)
                if len(row) > 2:
                    self.indices.extend([int(row[0])])
                    self.predictions.append(int(row[1][1]))
@@ -128,3 +130,25 @@ class Analyzer(object):
                 correct.add(i)
 
         return correct
+
+    def get_prediction(self,index):
+
+        if len(self.data[index]) > 2:
+            return int(self.data[index][1][1])
+        else:
+            return None
+
+    def get_distance(self,index):
+
+        if len(self.data[index]) > 2:
+            d = []
+            d.append(float(self.data[index][2]))
+            d.append(float(self.data[index][3]))
+            d.append(float(self.data[index][4]))
+            d.append(float(self.data[index][5]))
+            d.append(float(self.data[index][6]))
+            d.append(float(self.data[index][7]))
+
+            return d
+        else:
+            return None

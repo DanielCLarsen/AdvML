@@ -5,8 +5,8 @@ from Analyzer import Analyzer
 data = []
 total = 0
 
-file_name = "results/OKAPI_2019-04-28 16:02:33.394341.csv"
-file_unknown = "results/OKAPI_2019-04-28 16:02:33.394341_unknown.csv"
+file_name = "results/OKAPI_2019-04-29 17:55:32.779216.csv"
+file_unknown = "results/OKAPI_2019-04-29 17:55:32.779216_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown,small=True)
 
