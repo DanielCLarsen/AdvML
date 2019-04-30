@@ -51,7 +51,10 @@ for index in nmf_correct:
 
 print(len(nmf_correct))
 
-v=venn3([lsa.union(nmf),word2vec,okapi], set_labels = ('LSA and NMF', 'Word2Vec', 'Okapi BM25'),)
+plt.rcParams.update({'font.size': 22,'figure.figsize': [10,10]})
+v=venn3([lsa.union(nmf),word2vec,okapi], set_labels = ('LSA and NMF', 'Word2Vec', 'Okapi BM25'))
+plt.title("Correct answers")
+plt.savefig("images/venn_correct")
 plt.show()
 
 

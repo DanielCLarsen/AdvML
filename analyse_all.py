@@ -43,6 +43,8 @@ print(len(lsa.intersection(word2vec)))
 
 
 
-
+plt.rcParams.update({'font.size': 22,'figure.figsize': [10,10]})
 v=venn3([lsa.intersection(nmf),word2vec,okapi], set_labels = ('LSA and NMF', 'Word2Vec', 'Okapi BM25'))
+plt.title("Incorrect answers")
+plt.savefig("images/venn_incorrect")
 plt.show()
