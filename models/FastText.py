@@ -4,14 +4,21 @@ import numpy as np
 from scipy import spatial
 import nltk.tokenize
 import re
-import fasttext
+import fastText
+
 class FastText:
     def __init__(self,
                  wiki_file_path = os.path.join("data","wiki_dk_clean_w2v.txt"),
-                 ft_binaries_path= os.path.join("embeddings","wiki_w2v.bin")):
+                 ft_binaries_path= os.path.join("embeddings","wiki_w2v.bin"),train=False):
 
         self.name = "FastText"
-        self.ft = fasttext.load_model(ft_binaries_path)
+
+        if train:
+            self.ft = fastText.FastText.train_unsupervised("data/wiki_dk_clean_w2v.txt", dim=100)
+            self.ft.save_model("embeddings/ft.bin")
+        else:
+            self.ft = fastText.load_model(ft_binaries_path)
+
 
     def __call__(self, word):
         return self.ft[word]
@@ -23,7 +30,7 @@ class FastText:
 
         for word in words:
             try:
-                vec = self.ft[word]
+                vec = self.ft.get_word_vector(word)
             except:
                 raise Exception("I dont know", word)
 
@@ -33,10 +40,13 @@ class FastText:
 
     def know(self,query):
         words = self.__split(query)
-
         for word in words:
             try:
-                self.ft[word]
+
+                if self.ft.get_word_id(word) == -1:
+                    print("dont know",word," ",self.ft.get_subwords(word))
+
+                self.ft.get_word_vector(word)
             except:
                 return False
         return True

@@ -60,6 +60,7 @@ class Analyzer(object):
 
 
     def get_acc(self):
+        print(self.total)
         return self.predictions.count(3)/self.total
 
     def get_norm_dist(self):

@@ -5,8 +5,8 @@ import numpy as np
 data = []
 total = 0
 
-file_name = "results/FastText.csv"
-file_unknown = "results/FastText_unknown.csv"
+file_name = "results/FastText_ours.csv"
+file_unknown = "results/FastText_ours_unknown.csv"
 
 ana = Analyzer(file_name,file_unknown,small=True)
 

@@ -11,6 +11,8 @@ bow = BowSparse(overwrite=True,wiki_data_path="data/wiki_dk_clean.csv",
 
 lsa = LSA(bow,number_of_pc=100)
 
+
+
 Evaluator(lsa)
 
 

@@ -4,6 +4,6 @@ from utils.evaluator import Evaluator
 
 parse_wiki_w2v(max_articles=None,overwrite=False)
 
-ft = FastText(ft_binaries_path="embeddings/daft.bin")
+ft = FastText(ft_binaries_path="embeddings/ft.bin")
 
 Evaluator(ft)

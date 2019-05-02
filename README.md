@@ -1,23 +1,34 @@
 # ML GOODSTUFF
 
-## general guideline:
-1. Use wiki parser first
-2. then BOW sparse
-3. put that into your favorite model
-4. model is requried to have a .predict(words) function
-5. put the model into evaluator
-6. hope for the best
+Dataflow:
 
+1. wiki_parser creates clean text in "data" folder
+2. either a bow or binaries for w2v or fasttext is created in "embeddings" folder
+3. run scripts uses Evaluator to produce results csv file with distances and predictions
+4. analyse scripts calculates accuracies and plots form the result files
+
+#### word2vec implementation:
+https://pypi.org/project/word2vec/
+
+#### FastText implementation:
+https://github.com/facebookresearch/fastText/tree/master/python
+
+#### LSA and NMF implementation:
+sklearn sparse implementation
+
+#### Okapi BM25 implementation:c
+implemented manually from the equtions on wiki:
+https://en.wikipedia.org/wiki/Okapi_BM25
 
 ## Results
-| Large dataset (399)| LSA    | NMF   | Okapi BM25   | Word2Vec  | FastText | Ensemble | Human | Random |
-|-----------|--------|-------|--------------|-----------|-----------|-----------|-----------|-----------|
-| accuracy  | 42.6% ± 2.4% | 45.1% ± 2.5% | 69.4% ± 2.3% | 64.2% ± 2.4%| 71.2% ± 2.3% | 50.4% ± 2.5% | | 25.0% ± 2.2% |
+| Large dataset (399)| LSA    | NMF   | Okapi BM25   | Word2Vec  | FastText | FastText trained | Ensemble | Human | Random |
+|-----------|--------|-------|--------------|-----------|-----------|-----------|-----------|-----------|-----------|
+| accuracy  | 42.6% ± 2.4% | 45.1% ± 2.5% | 69.4% ± 2.3% | 64.2% ± 2.4%| 71.2% ± 2.3% |76.4% ± 2.1%| 50.4% ± 2.5% | | 25.0% ± 2.2% |
 
 
-| Small dataset (100)| LSA    | NMF   | Okapi BM25   | Word2Vec  | FastText | Ensemble | Human | Random |
-|-----------|--------|-------|--------------|-----------|-----------|-----------|-----------|-----------|
-| accuracy  | 49.0% ± 5.0% | 47.0% ± 5.0% | 71.0% ± 4.5% | 73.0% ± 4.4%|85.0% ± 3.6%|53.0% ± 5.0%| 97.0% ± 0%|25.0% ± 4.3%|
+| Small dataset (100)| LSA    | NMF   | Okapi BM25   | Word2Vec  | FastText |FastText trained| Ensemble | Human | Random |
+|-----------|--------|-------|--------------|-----------|-----------|-----------|-----------|-----------|-----------|
+| accuracy  | 49.0% ± 5.0% | 47.0% ± 5.0% | 71.0% ± 4.5% | 73.0% ± 4.4%|85.0% ± 3.6%|89.0% ± 3.1%|53.0% ± 5.0%| 97.0% ± 0%|25.0% ± 4.3%|
 
 
 
