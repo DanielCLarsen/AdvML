@@ -16,7 +16,7 @@ https://github.com/facebookresearch/fastText/tree/master/python
 #### LSA and NMF implementation:
 sklearn sparse implementation
 
-#### Okapi BM25 implementation:c
+#### Okapi BM25 implementation:
 implemented manually from the equtions on wiki:
 https://en.wikipedia.org/wiki/Okapi_BM25
 
